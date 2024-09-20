@@ -1,37 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <title>แม่แงวเอง</title>
+    <title>Morse | Personal Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script> <!-- Link to the script -->
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__content">
-            <a href="#" class="logo">
-                <img class="logo__img" src="logo_cat.png" alt="logo">
-            </a>
-
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a class="nav__link" href="/calendar.html">Calendar</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="#">Projects</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="btn" href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <header class="parallax-header">
+        <div class="typewriter" id="morseTitle"></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#showcase">Showcase</a>
+            <a href="#schedule">Schedule</a>
+        </nav>
     </header>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hi, I'm Morse, a [describe your profession or hobbies]. I'm passionate about [your interests] and love
+            creating [type of work you do].</p>
+    </section>
+
+    <section id="showcase" class="section">
+        <h2>Showcase</h2>
+        <p>Here are some of my projects:</p>
+        <!-- Add your showcase projects here -->
+    </section>
+
+    <section id="schedule" class="section">
+        <h2>My Schedule</h2>
+        <p>Stay tuned for updates on my work and availability!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Morse. All rights reserved.</p>
+    </footer>
 </body>
+
+</html>

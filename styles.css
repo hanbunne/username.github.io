@@ -1,0 +1,107 @@
+/* styles.css */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.parallax-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.typewriter {
+    font-size: 3rem;
+    animation: morseAnimation 2s infinite;
+}
+
+@keyframes morseAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Position navigation at the bottom */
+nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Optional: a light background */
+    padding: 10px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    /* Optional: adds a frosted glass effect */
+    display: flex;
+    /* Flexbox for horizontal alignment */
+    justify-content: center;
+    gap: 15px;
+    /* Space between links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: #ff4081;
+    /* Change color on hover */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Gradient hue animation */
+body {
+    background: linear-gradient(45deg, #ff5733, #33d7ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(360deg);
+    }
+}
