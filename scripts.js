@@ -27,6 +27,7 @@ const morseCodeMap = {
 
 // The word you want to display
 const word = "Morse";
+// const word = ["Morse","MaeMaew","Harufu"]
 
 let currentLetterIndex = 0; // Index of the current letter in the word
 let currentMorseIndex = 0;  // Index of the current dot/dash in the Morse code for the letter
