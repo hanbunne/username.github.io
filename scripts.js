@@ -68,7 +68,7 @@ function typeMorseCode() {
 
     // Reset to loop the animation once the word is completed
     if (currentLetterIndex >= word.length) {
-        typingSpeed = 300
+        typingSpeed = 400
         // currentLetterIndex = 0;
         // displayText = "";
         // morseTyping = "";
