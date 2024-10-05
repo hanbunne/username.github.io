@@ -105,3 +105,20 @@ body {
         filter: hue-rotate(360deg);
     }
 }
+
+.googleCalendar {
+    position: relative;
+    height: 500px;
+    width: 90%;
+    padding-bottom: 50%;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+.googleCalendar iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
