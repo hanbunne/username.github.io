@@ -51,7 +51,7 @@ nav {
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.2);
     /* Optional: a light background */
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 8px;
     backdrop-filter: blur(10px);
     /* Optional: adds a frosted glass effect */
