@@ -21,7 +21,7 @@ function setRandomGradient() {
 // Call the function when the page loads
 setRandomGradient();
 
-morseCodeMap = {
+const morseCodeMap = {
     'A': '·-', 'B': '-···', 'C': '-·-·', 'D': '-··', 'E': '·',
     'F': '··-·', 'G': '--·', 'H': '····', 'I': '··', 'J': '·---',
     'K': '-·-', 'L': '·-··', 'M': '--', 'N': '-·', 'O': '---',
@@ -34,6 +34,7 @@ morseCodeMap = {
 const word = "Morse";
 const words = ["Morse", "MaeMaew", "Harufu"]
 
+let currentWordIndex = 0
 let currentLetterIndex = 0; // Index of the current letter in the word
 let currentMorseIndex = 0;  // Index of the current dot/dash in the Morse code for the letter
 let morseTyping = "";       // The currently displayed morse code (e.g., "--")
@@ -44,8 +45,10 @@ let typingSpeed = 100;    // Speed of typing the morse code (in milliseconds)
 const morseTitleElement = document.getElementById('morseTitle');
 
 function typeMorseCode() {
-    if (currentLetterIndex < word.length) {
-        const currentLetter = word[currentLetterIndex].toUpperCase();
+    currentWordIndex = currentWordIndex % words.length
+    currentWord = words[currentWordIndex]
+    if (currentLetterIndex < currentWord.length) {
+        const currentLetter = currentWord[currentLetterIndex].toUpperCase();
         const morseCode = morseCodeMap[currentLetter]; // Get morse code for the current letter
 
         if (!isLetterDisplayed) {
@@ -56,7 +59,7 @@ function typeMorseCode() {
                 currentMorseIndex++;
             } else {
                 // Once all dots/dashes are typed, show the letter
-                displayText += word[currentLetterIndex];
+                displayText += currentWord[currentLetterIndex];
                 morseTyping = "";
                 currentMorseIndex = 0;
                 isLetterDisplayed = true;
@@ -72,15 +75,15 @@ function typeMorseCode() {
     }
 
     // Reset to loop the animation once the word is completed
-    if (currentLetterIndex >= word.length) {
+    if (currentLetterIndex >= currentWord.length) {
         typingSpeed = 400
         // currentLetterIndex = 0;
         // displayText = "";
         // morseTyping = "";
         if (morseTitleElement.textContent[currentLetterIndex] != '_')
-            displayText = word + "_"
+            displayText = currentWord + "_"
         else
-            displayText = word + "  "
+            displayText = currentWord + "  "
         morseTitleElement.textContent = displayText
     }
 
