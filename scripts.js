@@ -87,7 +87,7 @@ function typeMorseCode() {
         if (morseTitleElement.textContent[currentLetterIndex] != '_')
             displayText = currentWord + "_"
         else
-            displayText = currentWord + "  "
+            displayText = currentWord + " "
         morseTitleElement.textContent = displayText
     }
 

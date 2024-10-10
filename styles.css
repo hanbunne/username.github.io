@@ -21,6 +21,7 @@ html {
 
 .typewriter {
     font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
     animation: morseAnimation 2s infinite;
 }
 
