@@ -21,13 +21,18 @@ function setRandomGradient() {
 // Call the function when the page loads
 setRandomGradient();
 
-const morseCodeMap = {
-    'M': '--', 'O': '---', 'R': '·-·', 'S': '···', 'E': '·'
-};
+morseCodeMap = {
+    'A': '·-', 'B': '-···', 'C': '-·-·', 'D': '-··', 'E': '·',
+    'F': '··-·', 'G': '--·', 'H': '····', 'I': '··', 'J': '·---',
+    'K': '-·-', 'L': '·-··', 'M': '--', 'N': '-·', 'O': '---',
+    'P': '·--·', 'Q': '--·-', 'R': '·-·', 'S': '···', 'T': '-',
+    'U': '··-', 'V': '···-', 'W': '·--', 'X': '-··-', 'Y': '-·--',
+    'Z': '--··'
+}
 
 // The word you want to display
 const word = "Morse";
-// const word = ["Morse","MaeMaew","Harufu"]
+const words = ["Morse", "MaeMaew", "Harufu"]
 
 let currentLetterIndex = 0; // Index of the current letter in the word
 let currentMorseIndex = 0;  // Index of the current dot/dash in the Morse code for the letter
