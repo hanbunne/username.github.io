@@ -16,6 +16,10 @@ function setRandomGradient() {
     const color2 = getRandomColor();
     const angle = Math.floor(Math.random() * 360); // Random angle for the gradient
     document.body.style.background = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+
+    // Fixed background size and animation
+    document.body.style.backgroundSize = '400% 400%';
+    document.body.style.animation = 'gradientAnimation 15s ease infinite';
 }
 
 // Call the function when the page loads
