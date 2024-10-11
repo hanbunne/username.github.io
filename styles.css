@@ -43,7 +43,7 @@ html {
 }
 
 .section {
-    padding: 50px;
+    /* padding: 50px; */
     text-align: center;
     scroll-snap-align: start;
     scroll-snap-stop: normal;
@@ -53,6 +53,11 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#credits {
+    height: 80vh;
+
 }
 
 /* Position navigation at the bottom */
