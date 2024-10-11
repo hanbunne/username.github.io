@@ -158,9 +158,14 @@ a:hover {
 #logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: -webkit-linear-gradient(white, #38495a);
+    background: linear-gradient(white, #38495a);
+    /* Standard syntax */
     -webkit-background-clip: text;
+    /* For WebKit browsers */
+    background-clip: text;
+    /* Standard syntax */
     -webkit-text-fill-color: transparent;
+    /* For WebKit browsers */
 }
 
 #header {
@@ -284,9 +289,16 @@ html {
 }
 
 #title span {
-    background: -webkit-linear-gradient(white, #38495a);
+    background: linear-gradient(white, #38495a);
+    /* Standard syntax */
     -webkit-background-clip: text;
+    /* WebKit for Safari/Chrome */
+    background-clip: text;
+    /* Standard syntax */
     -webkit-text-fill-color: transparent;
+    /* WebKit for Safari/Chrome */
+    text-fill-color: transparent;
+    /* Standard syntax */
 }
 
 #stars {
