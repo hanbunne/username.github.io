@@ -17,6 +17,7 @@ html {
     color: white;
     position: relative;
     background-attachment: fixed;
+    transform: translatey(-5%);
 }
 
 .typewriter {
