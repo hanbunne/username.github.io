@@ -46,6 +46,7 @@ html {
     padding: 50px;
     text-align: center;
     scroll-snap-align: start;
+    scroll-snap-stop: normal;
     height: 100vh;
     display: flex;
     flex-direction: column;
