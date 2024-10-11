@@ -19,7 +19,7 @@ function setRandomGradient() {
 
     // Fixed background size and animation
     document.body.style.backgroundSize = '400% 400%';
-    document.body.style.animation = 'gradientAnimation 15s ease infinite';
+    document.body.style.animation = 'gradientAnimation 8s ease infinite';
 }
 
 // Call the function when the page loads
