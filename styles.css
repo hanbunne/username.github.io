@@ -47,7 +47,7 @@ html {
     color: white;
     text-align: center;
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     height: 100vh;
     display: flex;
     flex-direction: column;
