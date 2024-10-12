@@ -5,7 +5,7 @@ function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 10)];
+        color += letters[Math.floor(Math.random() * 10)]; //Use 10 instead of 16 for darker bg
     }
     return color;
 }
@@ -100,6 +100,6 @@ typeMorseCode();
 // Parallax scrolling effect
 window.addEventListener('scroll', () => {
     const parallax = document.querySelector('.parallax-header');
-    let scrollPosition = window.pageYOffset;
+    let scrollPosition = window.scrollY;
     parallax.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
