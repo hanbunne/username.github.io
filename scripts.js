@@ -45,51 +45,58 @@ let morseTyping = "";       // The currently displayed morse code (e.g., "--")
 let displayText = "";       // The final displayed text (e.g., "Mo")
 let isLetterDisplayed = false; // Boolean to check if the letter is already displayed
 let typingSpeed = 100;    // Speed of typing the morse code (in milliseconds)
+let isTyping = true
 
 const morseTitleElement = document.getElementById('morseTitle');
 
 function typeMorseCode() {
     currentWordIndex = currentWordIndex % words.length
     currentWord = words[currentWordIndex]
-    if (currentLetterIndex < currentWord.length) {
-        const currentLetter = currentWord[currentLetterIndex].toUpperCase();
-        const morseCode = morseCodeMap[currentLetter]; // Get morse code for the current letter
 
-        if (!isLetterDisplayed) {
-            if (currentMorseIndex < morseCode.length) {
-                // Add the next dot/dash from the morse code
-                morseTyping += morseCode[currentMorseIndex];
-                morseTitleElement.textContent = displayText + morseTyping;
-                currentMorseIndex++;
+    if (isTyping) {
+        // Type
+        if (currentLetterIndex < currentWord.length) {
+            const currentLetter = currentWord[currentLetterIndex].toUpperCase();
+            const morseCode = morseCodeMap[currentLetter]; // Get morse code for the current letter
+
+            if (!isLetterDisplayed) {
+                // Type morse code
+                if (currentMorseIndex < morseCode.length) {
+                    // Add the next dot/dash from the morse code
+                    morseTyping += morseCode[currentMorseIndex];
+                    morseTitleElement.textContent = displayText + morseTyping;
+                    currentMorseIndex++;
+                } else {
+                    // Once all dots/dashes are typed, show the letter
+                    displayText += currentWord[currentLetterIndex];
+                    morseTyping = "";
+                    currentMorseIndex = 0;
+                    isLetterDisplayed = true;
+                    morseTitleElement.textContent = displayText; // Update to show the letter
+                    typingSpeed = 200
+                }
             } else {
-                // Once all dots/dashes are typed, show the letter
-                displayText += currentWord[currentLetterIndex];
-                morseTyping = "";
-                currentMorseIndex = 0;
-                isLetterDisplayed = true;
-                morseTitleElement.textContent = displayText; // Update to show the letter
-                typingSpeed = 200
+                // Proceed to the next letter
+                currentLetterIndex++;
+                isLetterDisplayed = false;
+                typingSpeed = 100;
             }
         } else {
-            // Proceed to the next letter
-            currentLetterIndex++;
-            isLetterDisplayed = false;
-            typingSpeed = 100
+            // If done with word, proceed to deleting
+            isTyping = false;
+        }
+    } else {
+        // Deleting
+        if (currentLetterIndex > 0) {
+            displayText = displayText.slice(0, currentLetterIndex - 1) // Delete last letter
+            morseTitleElement.textContent = displayText; // Update to show the letter
+            currentLetterIndex--;
+        } else {
+            isTyping = true;
+            currentWordIndex++;
         }
     }
 
-    // Reset to loop the animation once the word is completed
-    if (currentLetterIndex >= currentWord.length) {
-        typingSpeed = 400
-        // currentLetterIndex = 0;
-        // displayText = "";
-        // morseTyping = "";
-        if (morseTitleElement.textContent[currentLetterIndex] != '_')
-            displayText = currentWord + "_"
-        else
-            displayText = currentWord + " "
-        morseTitleElement.textContent = displayText
-    }
 
     setTimeout(typeMorseCode, typingSpeed); // Recursively call the function for the next character
 }
